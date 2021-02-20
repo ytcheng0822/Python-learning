@@ -3,19 +3,21 @@ from selenium import webdriver
 
 driver=webdriver.Chrome("C:/Users/User/chromedriver.exe")
 
+driver.maximize_window()
+
 driver.get("https://www.google.com/")   # 進到Google的網站
 
 # 搜尋龍華科技大學
-# driver.find_element_by_css_selector("div.L3eUgb:nth-child(2) div.o3j99.ikrT4e.om7nvf:nth-child(3) div.A8SBwf:nth-child(1) div.RNNXgb:nth-child(2) div.SDkEP div.a4bIc > input.gLFyf.gsfi:nth-child(3)").send_keys("龍華科技大學\n")
+driver.find_element_by_css_selector("div.L3eUgb:nth-child(2) div.o3j99.ikrT4e.om7nvf:nth-child(3) div.A8SBwf:nth-child(1) div.RNNXgb:nth-child(2) div.SDkEP div.a4bIc > input.gLFyf.gsfi:nth-child(3)").send_keys("龍華科技大學\n")
 
 # 進入校園入口網
-# driver.find_element_by_css_selector("body.srp.vasq:nth-child(2) div.main:nth-child(9) div.GyAeWb:nth-child(12) div.D6j0vc:nth-child(2) div.eqAnXb:nth-child(3) div.g:nth-child(1) table.jmjoTe:nth-child(3) tr.mslg.dmenKe:nth-child(2) td:nth-child(1) div.usJj9c h3.r > a.l").click()
+driver.find_element_by_xpath("//a[contains(text(),'龍華科技大學資訊入口網站')]").click()
 
 # 輸入id
-# driver.find_element_by_css_selector("#muid").send_keys("id")
+driver.find_element_by_css_selector("#muid").send_keys("id")
 
 # 輸入password
-# driver.find_element_by_css_selector("#mpassword").send_keys("password")
+driver.find_element_by_css_selector("#mpassword").send_keys("password")
 
 # driver.find_element_by_css_selector("div.L3eUgb:nth-child(2) div.o3j99.ikrT4e.om7nvf:nth-child(3) div.A8SBwf:nth-child(1) div.RNNXgb:nth-child(2) div.SDkEP div.a4bIc > input.gLFyf.gsfi:nth-child(3)").send_keys("85porn\n")
 
