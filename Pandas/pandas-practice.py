@@ -1,7 +1,7 @@
 # 載入 pandas 模組
 import pandas as pd
 # 建立 Series (單維度資料分析)
-# data=pd.Series([20, 10, 15])
+data=pd.Series([20, 10, 15])
 
 # 基本 Series 操作
 # print(data)
