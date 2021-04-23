@@ -16,8 +16,8 @@ arr3 = np.array([    # 2x2
 ])
 
 # 合併第二個維度
-# result3 = np.hstack((arr1, arr2, arr3))
-# print(result3)
+result3 = np.hstack((arr1, arr2, arr3))
+print(result3)
 
 """
     2x8

@@ -1,7 +1,7 @@
 import pandas as pd
 
 # 讀取資料
-data = pd.read_csv("E:\Python-learning\Pandas\googleplaystore.csv")  # 把 csv 格式的檔案讀取成一個 DataFrame
+data = pd.read_csv("E:/Python-learning/Pandas/googleplaystore.csv")  # 把 csv 格式的檔案讀取成一個 DataFrame
 
 # 觀察資料
 print("資料數量", data.shape)
