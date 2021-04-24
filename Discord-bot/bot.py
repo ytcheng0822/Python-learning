@@ -15,15 +15,6 @@ bot = commands.Bot(command_prefix="!", intents=intents)  # 建立bot
 async def on_ready():
     print(">> Bot is online <<")
 
-@bot.event
-async def on_member_join(member):
-    channel = bot.get_channel(int(jdata["Welcome_channel"]))
-    await channel.send(f"{member} join!")    # member會依訪客名稱不同改變
-
-@bot.event
-async def on_member_remove(member):
-    channel = bot.get_channel(int(jdata["Leave_channel"]))
-    await channel.send(f"{member} leave!")
 
 @bot.command()
 async def load(ctx, extension):
@@ -43,8 +34,8 @@ async def reload(ctx, extension):
 
 for filename in os.listdir("./cmds"):
     if filename.endswith(".py"):
-        bot.load_extension(f"cmds.{filename[:-3]}")
+        bot.load_extension(f"cmds.{filename[:-3]}")  # 從開頭第0個字算起到結尾前3個字為止
 
 
-if __name__ == "__main__":
-    bot.run(jdata["TOKEN"])
+if __name__ == "__main__":      # 加上if __name__ == "__main__":的原因，其實就是因為程式可能會有「單獨執行」與「被引用」兩種情形
+    bot.run(jdata["TOKEN"])     # 加上 __name__ == "__main__" 的判斷即可讓檔案在被引用時，不該執行的程式碼不被執行

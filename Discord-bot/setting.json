@@ -1,5 +1,5 @@
 {
-    "TOKEN":"ODI4NTA2NzA1ODI1NDk3MDk5.YGqk_w.p7yF-9L0brEamvRCMusWnnSt4Kc",
+    "TOKEN":"ODI4NTA2NzA1ODI1NDk3MDk5.YGqk_w.ROj4rOp6cFrhXM5RrZYA3tvkNY4",
 
     "Welcome_channel":"828545160681750528",
 
@@ -9,5 +9,7 @@
                "E:\\Python-learning\\Discord-bot\\picture\\2.jpg"],
 
     "URL_Picture":["https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/84dc13b7-a2e7-4b45-83ec-311e72e82900/ddv3p6k-2fd07a81-0380-4c3a-ba4b-7e924472909a.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvODRkYzEzYjctYTJlNy00YjQ1LTgzZWMtMzExZTcyZTgyOTAwXC9kZHYzcDZrLTJmZDA3YTgxLTAzODAtNGMzYS1iYTRiLTdlOTI0NDcyOTA5YS5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.sVZTx3T8xqWmmVRefN29kmHSWk52Z7rYyZlvzyPkFmc",
-                   "https://www.teepr.com/wp-content/uploads/2020/11/EmxvAeBVQAAPFNt.jpg"]
+                   "https://www.teepr.com/wp-content/uploads/2020/11/EmxvAeBVQAAPFNt.jpg"],
+
+    "Keyword":["DC","Hello","Hi","bot"]
 }
