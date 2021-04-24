@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 import json
 import random
+import os
 
 with open(file="setting.json", mode="r", encoding="utf-8") as jfile:
     jdata = json.load(jfile)
@@ -24,20 +25,26 @@ async def on_member_remove(member):
     channel = bot.get_channel(int(jdata["Leave_channel"]))
     await channel.send(f"{member} leave!")
 
-@bot.command()         # 輸入!ping bot會回覆你目前的延遲
-async def ping(ctx):   # ctx = context  包含(使用者, ID, 所在伺服器, 所在頻道)
-    await ctx.send(f"{round(bot.latency*1000)} (ms)")
+@bot.command()
+async def load(ctx, extension):
+    bot.load_extension(f"cmds.{extension}")
+    await ctx.send(f"Loaded {extension} done.")
 
 @bot.command()
-async def picture(ctx):
-    random_pic = random.choice(jdata["Picture"])
-    pic = discord.File(random_pic)
-    await ctx.send(file=pic)
+async def unload(ctx, extension):
+    bot.unload_extension(f"cmds.{extension}")
+    await ctx.send(f"Unloaded {extension} done.")
 
 @bot.command()
-async def url_picture(ctx):
-    random_pic = random.choice(jdata["URL_Picture"])
-    await ctx.send(random_pic)
+async def reload(ctx, extension):
+    bot.reload_extension(f"cmds.{extension}")
+    await ctx.send(f"Reloaded {extension} done.")
 
 
-bot.run(jdata["TOKEN"])
+for filename in os.listdir("./cmds"):
+    if filename.endswith(".py"):
+        bot.load_extension(f"cmds.{filename[:-3]}")
+
+
+if __name__ == "__main__":
+    bot.run(jdata["TOKEN"])
