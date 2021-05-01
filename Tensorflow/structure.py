@@ -12,7 +12,7 @@ biases = tf.Variable(tf.zeros([1]))  # 偏差值一開始為
 y = Weights * x_data + biases      # 預測值
 
 loss = tf.reduce_mean(tf.square(y - y_data))    # 計算損失函數
-optimizer = tf.compat.v1.train.GradientDescentOptimizer(0.6)  # 優化器  梯度下降法: Gradient Descent
+optimizer = tf.compat.v1.train.GradientDescentOptimizer(0.5)  # 優化器  梯度下降法: Gradient Descent
 train = optimizer.minimize(loss)   # 訓練自己修正誤差, 誤差會隨著訓練的次數越變越小
 ### create tensorflow structure end ###
 
