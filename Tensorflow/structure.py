@@ -17,12 +17,11 @@ train = optimizer.minimize(loss)   # 訓練自己修正誤差, 誤差會隨著�
 ### create tensorflow structure end ###
 
 
-init = tf.compat.v1.global_variables_initializer()
+init = tf.compat.v1.global_variables_initializer()   # If you define variable you need initial
 
-sess = tf.compat.v1.Session()  # create session
-sess.run(init)    #  activate initialize
-
-for step in range(201):  # 訓練201次
-    sess.run(train)
-    if step % 20 == 0:
-        print(step, sess.run(Weights), sess.run(biases))   # 每20次 印出一次結果
+with tf.compat.v1.Session() as sess:    # use this method you don't need sess.close()
+    sess.run(init)
+    for step in range(201):  # 訓練201次
+        sess.run(train)
+        if step % 20 == 0:
+            print(step, sess.run(Weights), sess.run(biases))   # 每20次 印出一次結果

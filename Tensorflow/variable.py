@@ -1,7 +1,7 @@
 import tensorflow as tf
 tf.compat.v1.disable_eager_execution()
 
-state = tf.Variable(0, name="counter")
+state = tf.Variable(0, name="counter")   # This is a variable
 # print(state.name)
 
 one = tf.constant(1)
