@@ -33,7 +33,7 @@ prediction = add_layer(l1, 10, 1, activation_function=None)    # output layer: i
 
 
 loss = tf.reduce_mean(tf.square(ys - prediction))   # the error between prediction and real data
-train_step = tf.compat.v1.train.GradientDescentOptimizer(0.2).minimize(loss) # 優化器:訓練自己修正誤差 learning rate = 0.1
+train_step = tf.compat.v1.train.GradientDescentOptimizer(0.2).minimize(loss) # 優化器:訓練自己修正誤差 learning rate = 0.2
 init = tf.compat.v1.global_variables_initializer()  # If you define variable you need initialize
 
 # plot the real data
@@ -53,10 +53,9 @@ with tf.compat.v1.Session() as sess:
             except Exception:                # 因為第一次還沒有線段,所以會發生異常
                 pass                         # 執行pass
             prediction_value = sess.run(prediction, feed_dict={xs:x_data})   
-            lines = ax.plot(x_data, prediction_value, "r-", lw=5)    # to visualize the result and improvement
+            lines = ax.plot(x_data, prediction_value, "r-", linewidth=5)    # to visualize the result and improvement
             plt.pause(0.1)
             
 
             
 plt.show(block=True)   # block=True 為了讓figure plot完不要馬上關閉
-# 結論發現在此神經網路activation_function使用 softplus 會比 relu 效果更好
